@@ -1,0 +1,45 @@
+body {
+    display:flex;
+    flex-direction: column;
+    height: 75vh;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    font-size: 3em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 800;
+}
+
+.container {
+    height: 275px;
+    width: 240px;
+    background-color: blue;
+    text-align: center;
+    border: 8px solid blue;
+    border-radius: 20px;
+}
+
+button {
+    height: 50px;
+    width: 50px;
+    margin: 2px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+button:hover {
+    background-color: pink;
+}
+
+.display {
+    background-color: lightgreen;
+    font-size: 3em;
+    color: black;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    width: 230px;
+    border-radius: 20px;
+    text-align: end;
+}
