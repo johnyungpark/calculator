@@ -13,7 +13,7 @@ header {
 }
 
 .container {
-    height: 275px;
+    height: 330px;
     width: 240px;
     background-color: blue;
     text-align: center;
@@ -33,6 +33,10 @@ button:hover {
     background-color: pink;
 }
 
+#del, #clear {
+    width: 108px;
+}
+
 .display {
     background-color: lightgreen;
     font-size: 3em;
@@ -40,6 +44,15 @@ button:hover {
     margin-bottom: 5px;
     margin-left: 5px;
     width: 230px;
+    height: 55px;
+    line-height: 55px;
     border-radius: 20px;
     text-align: end;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+img {
+    height: 13px;
+    width: 13px;
 }
