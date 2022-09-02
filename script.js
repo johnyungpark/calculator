@@ -21,6 +21,30 @@ buttons.map( button => {
                     return;
                 } else display.innerText += ".";
                 break;
+            case '+':
+                if ((display.textContent.includes('+')) || (display.textContent.includes('-')) || (display.textContent.includes('*')) || (display.textContent.includes('/'))) {
+                    let temp = equate();
+                    display.textContent = temp + '+';
+                } else display.innerText += '+';
+                break;
+            case '-':
+                    if ((display.textContent.includes('+')) || (display.textContent.includes('-')) || (display.textContent.includes('*')) || (display.textContent.includes('/'))) {
+                        let temp = equate();
+                        display.textContent = temp + '-';
+                    } else display.innerText += '-';
+                    break;
+            case '*':
+                    if ((display.textContent.includes('+')) || (display.textContent.includes('-')) || (display.textContent.includes('*')) || (display.textContent.includes('/'))) {
+                        let temp = equate();
+                        display.textContent = temp + '*';
+                    } else display.innerText += '*';
+                    break;
+            case '/':
+                    if ((display.textContent.includes('+')) || (display.textContent.includes('-')) || (display.textContent.includes('*')) || (display.textContent.includes('/'))) {
+                        let temp = equate();
+                        display.textContent = temp + '/';
+                    } else display.innerText += '/';
+                    break;
             default:
                 display.innerText += e.target.innerText;
         }
@@ -39,17 +63,27 @@ function keyboardInput(e) {
     } else if (e.key === 'Escape') {
         display.innerText = '';
     } else if (e.key === '+') {
-        display.innerText += '+';
+        if ((display.textContent.includes('+')) || (display.textContent.includes('-')) || (display.textContent.includes('*')) || (display.textContent.includes('/'))) {
+            let temp = equate();
+            display.textContent = temp + '+';
+        } else display.innerText += '+';
     } else if (e.key === '-') {
-        display.innerText += '-';
+        if ((display.textContent.includes('+')) || (display.textContent.includes('-')) || (display.textContent.includes('*')) || (display.textContent.includes('/'))) {
+            let temp = equate();
+            display.textContent = temp + '-';
+        } else display.innerText += '-';
     } else if (e.key === '*') {
-        display.innerText += '*';
+        if ((display.textContent.includes('+')) || (display.textContent.includes('-')) || (display.textContent.includes('*')) || (display.textContent.includes('/'))) {
+            let temp = equate();
+            display.textContent = temp + '*';
+        } else display.innerText += '*';
     } else if (e.key === '/') {
-        display.innerText += '/';
+        if ((display.textContent.includes('+')) || (display.textContent.includes('-')) || (display.textContent.includes('*')) || (display.textContent.includes('/'))) {
+            let temp = equate();
+            display.textContent = temp + '/';
+        } else display.innerText += '/';
     } else if (e.key === 'Enter' || e.key === '=') equate ();
 };
-
-// equal.addEventListener('click', equate);
 
 function equate() {
     if (display.innerText.indexOf("+") != -1) {
@@ -59,6 +93,7 @@ function equate() {
             total += parseInt(num);
         }
         display.innerText = total;
+        return total.toString();
     } else if (display.innerText.indexOf("-") != -1) {
         let final = display.innerText.split('-');
         let total = final[0];
@@ -66,6 +101,7 @@ function equate() {
             total -= final[i];
         }
         display.innerText = total;
+        return total.toString();
     } else if (display.innerText.indexOf("*") != -1) {
         let final = display.innerText.split('*');
         let total = final[0];
@@ -73,6 +109,7 @@ function equate() {
             total *= final[i];
         }
         display.innerText = Math.round(total * 100)/100;
+        return (Math.round(total * 100)/100).toString();
     } else if (display.innerText.indexOf("/") != -1) {
         let final = display.innerText.split('/');
         let total = final[0];
@@ -80,5 +117,6 @@ function equate() {
             total /= final[i];
         }
         let final2 = (total === Infinity) ? (display.innerText = "Error!") : (display.innerText = Math.round(total * 100)/100);
+        return final2.toString();
     }
 };
